@@ -1,0 +1,12 @@
+# caches
+.cache
+.idea
+.vs
+.vscode
+
+# build output
+build
+compile_commands.json
+
+# ignore my own run scripts
+*.ps1
