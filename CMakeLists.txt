@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12.0)
 
 set(PROJECT_NAME "fmttools")
-project(${PROJECT_NAME} VERSION 0.1.1)
+project(${PROJECT_NAME} VERSION 0.1.2)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -24,7 +24,9 @@ set_target_properties(
     )
 
 target_include_directories(
-    ${PROJECT_NAME} PUBLIC include
+    ${PROJECT_NAME} PUBLIC
+    "${PROJECT_BINARY_DIR}"
+    "${PROJECT_SOURCE_DIR}/include"
     )
 
 # --------------------------------------------------------------------------------------------------
