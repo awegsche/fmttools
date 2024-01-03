@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12.0)
 
 set(PROJECT_NAME "fmttools")
-project(${PROJECT_NAME} VERSION 0.1.0)
+project(${PROJECT_NAME} VERSION 0.1.1)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -15,6 +15,17 @@ include_directories(include)
 add_library(${PROJECT_NAME}
     src/lib.cpp
 )
+
+set_target_properties(
+    ${PROJECT_NAME} PROPERTIES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION ${PROJECT_VERSION_MAJOR}
+    PUBLIC_HEADER include/fmttools.h
+    )
+
+target_include_directories(
+    ${PROJECT_NAME} PUBLIC include
+    )
 
 # --------------------------------------------------------------------------------------------------
 # ---- Testing -------------------------------------------------------------------------------------
