@@ -3,9 +3,8 @@
 
 #include <format>
 
-// With this concept...
 template<typename T>
-concept trivially_formattable = requires(const T&x, std::format_context::iterator i)
+concept displayable = requires(const T&x, std::format_context::iterator i)
 {
     {
         format_value(x, i)
@@ -13,7 +12,7 @@ concept trivially_formattable = requires(const T&x, std::format_context::iterato
 };
 
 // And this partial specialization...
-template<trivially_formattable T>
+template<displayable T>
 struct std::formatter<T> {
     constexpr auto parse(auto&ctx) { return ctx.begin(); }
     auto format(const T&thing, auto&ctx) const { return format_value(thing, ctx.out()); }
