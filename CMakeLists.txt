@@ -20,7 +20,7 @@ set_target_properties(
     ${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION ${PROJECT_VERSION_MAJOR}
-    PUBLIC_HEADER include/fmttools.h
+    PUBLIC_HEADER fmttools.h
     )
 
 target_include_directories(
